@@ -1,0 +1,17 @@
+<h3><%= @category.name %>'s memo</h3>
+
+<% @memos.each do |memo|%>
+    <div class="col-sm-4 ">
+        <div class="list-group">
+            <div class="list-group-item list-group-item-primary">
+            <%= memo.title %>
+            <p><%= memo.category.name %></p>
+                <div class="buttons">
+                    <a href="/memos/<%= memo.id %>" >削除</a> 
+                    <a href="/memos/<%= memo.id %>/edit" >編集</a>
+                </div>
+            </div>
+            <div class="list-group-item list-group-item-default"><%= memo.body %></div>
+        </div>
+    </div>
+<% end %>
