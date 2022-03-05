@@ -1,28 +1,23 @@
-<h3>Memo List</h3>
+<div class="mb-3 mt-3">
+    <h1>Memo</h1>
+</div>
 
-<% @memos.each do |memo|%>
-    <div class="grid">
+<div class="row">
+    <% @memos.each do |memo|%>
         <div class="col-md-4">
-            <div class="list-group">
-                <div class="list-group-item list-group-item-primary">
-                <%= memo.title %>
-                <p><%= memo.category.name %></p>
-                    <div class="buttons">
-                        <a href="/memos/<%= memo.id %>" >削除</a> 
-                        <a href="/memos/<%= memo.id %>/edit" >編集</a>
+            <div class="mb-4">
+                <div class="list-group">
+                    <div class="list-group-item list-group-item-primary">
+                        <h5><%= memo.title %></h5>
+                        <p><%= memo.category.name %></p>
+                    </div>
+                    <div class="list-group-item list-group-item-default">
+                        <%= memo.body %>
+                        <a href="memos/<%= memo.id %>">削除</a>
+                        <a href="memos/<%= memo.id %>/edit">編集</a>
                     </div>
                 </div>
-                <div class="list-group-item list-group-item-default"><%= memo.body %></div>
             </div>
         </div>
-    </div>
-<% end %>
-
-
-
-
-
-
-
-
-
+    <% end %>
+</div>
